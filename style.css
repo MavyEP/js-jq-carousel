@@ -3,3 +3,122 @@
       margin: 0;
       box-sizing: border-box;
 }
+
+body {
+  background-image: url(https://static.playoverwatch.com/img/crystal-candy-bg-top-e64823cff8.jpg);
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+div .titlebar {
+  height: 20vh;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div .titlebar h1 {
+  letter-spacing: 5px;
+  font-weight: 400;
+  font-style: italic;
+  font-family: 'Roboto Slab', serif;
+}
+
+div .titlebar img {
+  display: inline;
+  max-width: 90%;
+  max-height: 90%;
+  filter: brightness(1.2);
+}
+
+div .titlebar img:first-child{
+  margin-left: 50px;
+}
+
+div .slider {
+  height: 70vh;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+div .prev {
+  margin-right: 50px;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div .prev i {
+  font-size: 30px;
+  transition: font-size 0.5s;
+  opacity: 0.5;
+}
+
+div .select {
+  text-align: center;
+  position: absolute;
+  bottom:  80px;
+}
+
+.select span {
+  border: 1px solid #ff9631;
+  background-color: #ff9c00;
+  color: white;
+  font-size: 25px;
+  padding: 5px 35px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  cursor: pointer;
+}
+
+img {
+  display: none;
+}
+
+div .next {
+  margin-left: 50px;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div .next i {
+  font-size: 30px;
+  transition: font-size 0.5s;
+  opacity: 0.5;
+}
+
+div .next , div .prev {
+  cursor: pointer;
+  color: white;
+}
+
+.active {
+  display: block;
+}
+
+.slider div i:hover {
+  font-size: 60px;
+  opacity: 1;
+}
+
+main {
+  position: relative;
+}
+
+footer {
+  height: 10vh;
+  width: auto;
+  background-image: url(https://static.playoverwatch.com/img/pages/buy/buy-bar-bg-3c956a1db2.jpg);
+}
