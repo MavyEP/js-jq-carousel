@@ -1,10 +1,10 @@
 
-var clock = setInterval(test, 1000);
+var clock = setInterval(autoplay, 1000);
 
 //mettere il click nella classe next
 $('.next').click(function() {
   clearInterval(clock);
-  test();
+  autoplay();
 });
 
 //mettere il click nella classe prev
@@ -22,7 +22,7 @@ $('.prev').click(function() {
 });
 
 //creo la funzione che mi fa muovere le immagini in modo crescente (1,2,3...)
-function test() {
+function autoplay() {
   var img_visibile = $('.active');
   img_visibile.removeClass('active');
   var img_prossima = img_visibile.next('img');
@@ -34,22 +34,20 @@ function test() {
   }
 };
 
-$(".slider .rotation_possibilities .imgcontainerleft img").click(function() {
+$(".slider .rotation_possibilities  img").click(function() {
     clearInterval(clock);
     var img_visibile = $(".active");
-    var parametro = $(this).index();
+    var padre = $(this).parent();
+    console.log(padre);
+    if (padre.hasClass("imgcontainerleft")) {
+      var parametro = $(this).index();
+      console.log("left");
+    } else {
+          var immagini_sinistra = $(".imgcontainerleft > img").length;
+          var parametro = $(this).index() + immagini_sinistra;
+          console.log("right");
+    }
     img_visibile.removeClass("active");
      $(".slider .slidercontent .slide img").eq(parametro).addClass("active")
-   }
-)
-
-$(".slider .rotation_possibilities .imgcontainerright img").click(function() {
-    clearInterval(clock);
-    var img_visibile = $(".active");
-    console.log(img_visibile);
-    var parametro = $(this).index() + 16;
-    console.log(parametro);
-    img_visibile.removeClass("active");
-     $(".slider .slidercontent .slide img").eq(parametro).addClass("active").shineImage();
    }
 )
